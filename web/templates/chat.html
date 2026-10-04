@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NeuroCare AI Assistant</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="main-title">🧠 NeuroCare AI Assistant</div>
+        <div class="subtitle">Support for diagnostic guidance in neurology</div>
+
+        <div class="chat-window" id="chat-window">
+            <div class="bot-bubble">🧠 I'm NeuroCare, how do you feel?</div>
+        </div>
+
+        <div class="input-area">
+            <input type="text" id="user-input" placeholder="Describe your symptoms here..." autocomplete="off">
+            <button type="button" id="send-btn">send</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

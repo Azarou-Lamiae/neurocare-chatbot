@@ -1,0 +1,162 @@
+/* 🎨 MEDICAL CSS DESIGN - FULL SCREEN FIX */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; /* Supprime le scroll global de la page */
+    background: linear-gradient(to right, #e6f2ff, #f7fbff);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 850px;
+    height: 95vh; /* Prend la quasi-totalité de la hauteur de l'écran */
+    background: transparent;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column; /* Aligne verticalement Titre -> Fenêtre -> Saisie */
+    box-sizing: border-box;
+}
+
+.main-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #0b3d91;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* 🤖 FENÊTRE DE CHAT DYNAMIQUE */
+.chat-window {
+    flex: 1; /* Remplace le 'height: 550px' pour s'adapter automatiquement */
+    overflow-y: auto; /* Le scroll se fait UNIQUEMENT ici */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    border: 1px solid #d1e3f8;
+    box-sizing: border-box;
+}
+
+/* Personnalisation subtile de la scrollbar de la fenêtre de chat */
+.chat-window::-webkit-scrollbar {
+    width: 6px;
+}
+.chat-window::-webkit-scrollbar-track {
+    background: transparent;
+}
+.chat-window::-webkit-scrollbar-thumb {
+    background-color: #cbdcf0;
+    border-radius: 10px;
+}
+
+/* 💬 BULLES DE MESSAGE */
+.user-bubble {
+    background-color: #0b3d91;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 18px 18px 0 18px;
+    max-width: 80%;
+    align-self: flex-end;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.bot-bubble {
+    background-color: #ffffff;
+    border-left: 6px solid #0b3d91;
+    color: #333;
+    padding: 15px 20px;
+    border-radius: 18px 18px 18px 0;
+    max-width: 85%;
+    align-self: flex-start;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    line-height: 1.5;
+}
+
+/* 📊 TABLES & MARKDOWN STYLES */
+.bot-bubble table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.95em;
+}
+
+.bot-bubble th {
+    background-color: #0b3d91;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+.bot-bubble td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.bot-bubble tr:nth-child(even) {
+    background-color: #f9fbfd;
+}
+
+.bot-bubble h2 {
+    font-size: 1.2em;
+    color: #0b3d91;
+    margin-top: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* ⌨️ ZONE DE SAISIE FIXÉE EN BAS */
+.input-area {
+    display: flex;
+    gap: 10px;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #cbdcf0;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    transition: border 0.3s;
+    background-color: #ffffff;
+}
+
+input[type="text"]:focus {
+    border-color: #0b3d91;
+}
+
+#send-btn {
+    background-color: #0b3d91;
+    color: white;
+    border: none;
+    padding: 0 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+#send-btn:hover {
+    background-color: #082d6b;
+}
